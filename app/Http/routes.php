@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 Route::get('/', [
     'as' => 'home',
@@ -21,3 +22,5 @@ Route::get('/', [
 ]);
 
 Route::resource('tasks', 'TasksController');
+=======
+>>>>>>> 471b5ef3bf621d08b8b02cb70f33c9f702a1d645
