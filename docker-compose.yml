@@ -1,0 +1,25 @@
+web:
+  build: .
+  ports:
+   - "80:80"
+  volumes:
+   - ~/event/web/app:/var/www/html
+
+api:
+  build: .
+  ports:
+   - "8080:80"
+  links:
+   - mariadb
+  volumes:
+   - ~/event/source/app:/var/www/html
+
+mariadb:
+  image: mariadb
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: my-secret-pw
+    MYSQL_DATABASE: event
+    MYSQL_USER: marketingevents
+    MYSQL_PASSWORD: gd09y4P585IS8jZ
